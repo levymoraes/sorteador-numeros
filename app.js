@@ -54,9 +54,17 @@ function mudarStatusBotao() {
 }
 
 function reiniciar() {
-  document.getElementById("quantidade").value = "";
-  document.getElementById("de").value = "";
-  document.getElementById("ate").value = "";
+  // Define um array com os IDs dos campos de entrada que serão limpos
+  const limparCampos = ["quantidade", "de", "ate"];
+  // Itera sobre cada ID no array 'limparCampos'
+  // O loop começa em 0 e vai até o tamanho do array 'limparCampos'
+  // A cada iteração, o valor de 'i' é incrementado em 1
+  // for i = 0; = 'de' e assim por diante
+  for (let i = 0; i < limparCampos.length; i++) {
+    // Acessa o elemento HTML correspondente ao ID atual e limpa seu valor
+    document.getElementById(limparCampos[i]).value = "";
+  }
+  //
   document.getElementById("resultado").innerHTML =
     '<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>';
   mudarStatusBotao();
